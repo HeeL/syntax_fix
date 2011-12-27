@@ -16,7 +16,7 @@ module SyntaxFix
     end
 
     def fix_syntax(source)
-      source.gsub(/\:([a-zA-Z_0-9]*)(\s*)=\>(\s*)/){|match| "#{$1}:#{$2.empty? || ($2+$3).empty? ? " " : $2}"}
+      source.gsub(/[^\:]\:([a-zA-Z_0-9]*)(\s*)=\>(\s*)/){|match| "#{$1}:#{$2.empty? || ($2+$3).empty? ? " " : $2}"}
     end
   end
 end
