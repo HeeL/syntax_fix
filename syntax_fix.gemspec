@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = SyntaxFix::VERSION
   s.authors     = ["Sergey Parizhskiy"]
   s.email       = ["parizhskiy@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/HeeL/syntax_fix"
   s.summary     = %q{Replace Ruby 1.8 syntax with the modern one}
   s.description = %q{Replace Ruby 1.8 syntax with the Ruby 1.9 syntax all over the project}
 
