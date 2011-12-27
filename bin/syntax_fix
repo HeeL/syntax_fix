@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'syntax_fix'
+
+checker = SyntaxFix::Checker.new
+checker.fix_code(File.expand_path('.'))
