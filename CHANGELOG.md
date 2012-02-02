@@ -1,3 +1,8 @@
+v0.0.2
+======
+
+* added ability to pass arguments from a command line. --verbose and --help
+
 v0.0.1
 ======
 

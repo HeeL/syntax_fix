@@ -1,5 +1,19 @@
 #!/usr/bin/env ruby
 require 'syntax_fix'
+require 'optparse'
 
 checker = SyntaxFix::Checker.new
+optparse = OptionParser.new do |opts|
+  opts.on( '-h', '--help', 'Display this screen' ) do
+    puts opts
+    exit
+  end
+  opts.on( '-v', '--verbose', 'Be verbose about the actions' ) do
+    checker.verbose = true
+  end
+end
+optparse.parse!
+
+puts 'Reading files...' if checker.verbose
 checker.fix_code(File.expand_path('.'))
+puts 'Done!' if checker.verbose

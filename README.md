@@ -28,6 +28,10 @@ Usage
 
 `syntax_fix` command will check and rewrite all files with the new syntax (including nested files and directories)
 
+`-h` or `--help` - output all the possible arguments that you can pass from a command line
+
+`-v` or `--verbose` - be verbose about the actions
+
 Contributing
 ============
 
