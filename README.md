@@ -32,7 +32,4 @@ Usage
 
 `-v` or `--verbose` - be verbose about the actions
 
-Contributing
-============
-
-If you consider to contribute to syntax_fix gem, please try to cover your code with tests
+`-p [PATH]` or `--path [PATH]` - specify the relative path  to start actions from

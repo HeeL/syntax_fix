@@ -11,9 +11,14 @@ optparse = OptionParser.new do |opts|
   opts.on( '-v', '--verbose', 'Be verbose about the actions' ) do
     checker.verbose = true
   end
+  opts.on( '-p [PATH]', '--path [PATH]', 'Specify the relative path  to start actions from' ) do |path|
+    checker.rel_path = path
+  end
+  checker.rel_path ||= '.'
 end
 optparse.parse!
 
 puts 'Reading files...' if checker.verbose
-checker.fix_code(File.expand_path('.'))
+path = File.expand_path(checker.rel_path)
+checker.fix_code(path)
 puts 'Done!' if checker.verbose

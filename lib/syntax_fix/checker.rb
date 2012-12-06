@@ -1,6 +1,6 @@
 module SyntaxFix
   class Checker
-    attr_accessor :verbose
+    attr_accessor :verbose, :rel_path
 
     def fix_code(path)
       Dir.foreach(path) do |name|
@@ -11,7 +11,7 @@ module SyntaxFix
 
     private
     def fix_file(current_item)
-      return if !current_item.correct_file?
+      return unless current_item.correct_file?
       content = current_item.read_file
       fixed_content = fix_syntax(content)
       if content != fixed_content
