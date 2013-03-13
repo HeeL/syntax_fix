@@ -12,6 +12,10 @@ module SyntaxFix
       File.directory?(@path) && !['.', '..'].include?(File.basename(@path))
     end
 
+    def is_file?
+      File.file?(@path) && !['.', '..'].include?(File.basename(@path))
+    end
+
     def correct_file?
       File.file?(@path) && File.writable?(@path) && check_exts.include?(File.extname(@path)[1..-1])
     end
