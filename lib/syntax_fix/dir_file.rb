@@ -5,7 +5,7 @@ module SyntaxFix
 
     def initialize(path)
       @path = path
-      @check_exts = ['rb', 'erb', 'rake', 'haml']
+      @check_exts = ['rb', 'erb', 'rake', 'haml', 'slim']
     end
 
     def is_dir?
