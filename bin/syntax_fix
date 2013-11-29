@@ -11,7 +11,7 @@ optparse = OptionParser.new do |opts|
   opts.on( '-v', '--verbose', 'Be verbose about the actions' ) do
     checker.verbose = true
   end
-  opts.on( '-p [PATH]', '--path [PATH]', 'Specify the relative path  to start actions from' ) do |path|
+  opts.on( '-p [PATH or FILENAME]', '--path [PATH or FILENAME]', 'Specify the relative path to start actions from or a single file' ) do |path|
     checker.rel_path = path
   end
   checker.rel_path ||= '.'

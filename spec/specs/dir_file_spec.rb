@@ -10,6 +10,11 @@ describe SyntaxFix::DirFile do
     dir.is_dir?.should be_true
   end
 
+  it "checks if current item is a file" do
+    file = SyntaxFix::DirFile.new("#{@path}/test.rb")
+    file.is_file?.should be_true
+  end
+
   it "returns false when dir is '..'" do
     dir = SyntaxFix::DirFile.new("#{@path}/nested/.")
     dir.is_dir?.should be_false

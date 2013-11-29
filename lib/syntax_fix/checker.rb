@@ -3,9 +3,14 @@ module SyntaxFix
     attr_accessor :verbose, :rel_path
 
     def fix_code(path)
-      Dir.foreach(path) do |name|
-        current_item = SyntaxFix::DirFile.new([path, name].join('/'))
-        current_item.is_dir? ? fix_code(current_item.path) : fix_file(current_item)
+      dirfile = SyntaxFix::DirFile.new(path)
+      if dirfile.is_dir?
+        Dir.foreach(path) do |name|
+          current_item = SyntaxFix::DirFile.new([path, name].join('/'))
+          current_item.is_dir? ? fix_code(current_item.path) : fix_file(current_item)
+        end
+      elsif dirfile.is_file?
+        fix_file dirfile
       end
     end
 
